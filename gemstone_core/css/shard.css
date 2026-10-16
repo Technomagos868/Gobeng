@@ -1,0 +1,963 @@
+/*SHARD UI - DESKTOP FIRST*/
+:root {
+    /*COLOR SETTINGS*/
+    --color-bg: #fefefe;
+    --color-navbar: #fefefe;
+    --color-navbar-border: #bababa;
+    --color-navbar-burger: #2070b7;
+    --color-navbar-close: #ce4648;
+    --color-navbar-button-hover: #2070b7;
+    --color-navbar-text: #000;
+    --color-section: #fefefe;
+    --color-section-alt: #fafafa;
+    --color-section-border: #bababa;
+    --color-text: #262626;
+    --color-button-default: #000;
+    --color-button-default-hover: #444;
+    --color-button-default-text: #fff;
+    --color-button-primary: #2070b7;
+    --color-button-primary-hover: #247dcd;
+    --color-button-primary-text: #262626;
+    --color-button-good: #189b18;
+    --color-button-good-hover: #1bb11b;
+    --color-button-good-text: #262626;
+    --color-button-warning: #e69500;
+    --color-button-warning-hover: #ffa500;
+    --color-button-warning-text: #262626;
+    --color-button-bad: #ce4648;
+    --color-button-bad-hover: #e13636;
+    --color-button-bad-text: #262626;
+
+    /*SIZE SETTINGS*/
+    --navbar-height: 60px;
+    --sidebar-width: 80%;
+    --max-width: 1200px;
+}
+@font-face{
+    font-family: gs;
+    src: url('../../gemstone_core/font/Montserrat-Regular.ttf');
+}
+@font-face{
+    font-family: gs-bold;
+    src: url('../../gemstone_core/font/Montserrat-SemiBold.ttf');
+}
+@font-face{
+    font-family: gs-lite;
+    src: url('../../gemstone_core/font/Montserrat-Light.ttf');
+}
+@font-face{
+    font-family: gs-thin;
+    src: url('../../gemstone_core/font/Montserrat-ExtraLight.ttf');
+}
+*{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html, body{
+    height: 100%;
+    position: relative;
+    font-family: gs;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.shard-navbar{
+    width: 100%;
+    background-color: var(--color-navbar);
+    height: var(--navbar-height);
+    color: var(--color-navbar-text);
+    padding: 10px;
+    overflow: hidden;
+}
+.shard-navbar.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.shard-navbar.bordered{
+    border-bottom: solid 1px var(--color-navbar-border);
+}
+.shard-navbar-limiter{
+    display: flex;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+    height: calc(var(--navbar-height) - 20px);
+}
+.shard-navbar-trigger{
+    display: none;
+}
+.shard-navbar-header{
+    flex-grow: 1;
+}
+.shard-navbar-header img{
+    height: calc(var(--navbar-height) - 20px);
+}
+.shard-navbar-button-group{
+    display: flex;
+    list-style: none;
+    align-content: center;
+    flex-grow: 7;
+}
+.shard-navbar-button{
+    display: block;
+    padding: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: gs;
+    align-self: center;
+}
+.shard-navbar-button:hover{
+    background-color: var(--color-navbar-button-hover);
+}
+
+.shard-social-navbar{
+
+}
+.shard-social-button{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    margin: 5px 5px 5px 0;
+    color: #000;
+    text-decoration: none;
+    line-height: 50px;
+    padding-left: 60px;
+    font-size: 1.5rem;
+}
+.shard-social-button.email{
+    background-image: url("../image/email-logo.png");
+}
+.shard-social-button.wa{
+    background-image: url("../image/wa-logo.png");
+}
+.shard-social-button.ig{
+    background-image: url("../image/ig-logo.png");
+}
+.shard-social-button.fb{
+    background-image: url("../image/fb-logo.png");
+}
+
+.shard-section{
+    background-color: var(--color-section);
+    color: var(--color-text);
+    position: relative;
+    width: 100%;
+    font-size: 1.2rem;
+}
+.shard-section.bordered{
+    border-bottom: solid 1px var(--color-section-border);
+}
+.shard-section:nth-child(even){
+    background-color: var(--color-section-alt);
+}
+.shard-section-limiter{
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.shard-flex-container{
+    display: flex;
+    align-items: center;
+}
+.shard-flex-container.column{
+    flex-direction: column;
+}
+.shard-flex-container.row{
+    flex-direction:row;
+}
+.shard-flex-container.reverse{
+    flex-direction: row-reverse;
+}
+.shard-flex-container.column.reverse{
+    flex-direction: column-reverse;
+}
+.shard-flex-container.row.reverse{
+    flex-direction:row-reverse;
+}
+.shard-flex-content{
+    margin: 10px 10px 10px 0;
+}
+.shard-flex-content:first-child{
+    margin: 10px;
+}
+
+.shard-grid-container{
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 10px;
+}
+.shard-grid-container.column-2{
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+}
+.shard-grid-container.column-3{
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+}
+.shard-grid-container.column-4{
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+}
+.shard-grid-container.column-5{
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+}
+.shard-grid-container.column-6{
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
+}
+/*grid of 2*/
+.shard-grid-container.ratio-1-1{
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+/*grid of 3*/
+.shard-grid-container.ratio-1-2{
+    -ms-grid-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr;
+}
+.shard-grid-container.ratio-2-1{
+    -ms-grid-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
+}
+/*grid of 4*/
+.shard-grid-container.ratio-1-3{
+    -ms-grid-columns: 1fr 3fr;
+    grid-template-columns: 1fr 3fr;
+}
+.shard-grid-container.ratio-3-1{
+    -ms-grid-columns: 3fr 1fr;
+    grid-template-columns: 3fr 1fr;
+}
+.shard-grid-container.ratio-1-1-2{
+    -ms-grid-columns: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+.shard-grid-container.ratio-1-2-1{
+    -ms-grid-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+.shard-grid-container.ratio-2-1-1{
+    -ms-grid-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+/*grid of 5*/
+.shard-grid-container.ratio-1-4{
+    -ms-grid-columns: 1fr 4fr;
+    grid-template-columns: 1fr 4fr;
+}
+.shard-grid-container.ratio-2-3{
+    -ms-grid-columns: 2fr 3fr;
+    grid-template-columns: 2fr 3fr;
+}
+.shard-grid-container.ratio-3-2{
+    -ms-grid-columns: 3fr 2fr;
+    grid-template-columns: 3fr 2fr;
+}
+.shard-grid-container.ratio-4-1{
+    -ms-grid-columns: 4fr 1fr;
+    grid-template-columns: 4fr 1fr;
+}
+.shard-grid-container.ratio-1-2-2{
+    -ms-grid-columns: 1fr 2fr 2fr;
+    grid-template-columns: 1fr 2fr 2fr;
+}
+.shard-grid-container.ratio-2-1-2{
+    -ms-grid-columns: 2fr 1fr 2fr;
+    grid-template-columns: 2fr 1fr 2fr;
+}
+.shard-grid-container.ratio-2-2-1{
+    -ms-grid-columns: 2fr 2fr 1fr;
+    grid-template-columns: 2fr 2fr 1fr;
+}
+.shard-grid-container.ratio-1-1-3{
+    -ms-grid-columns: 1fr 1fr 3fr;
+    grid-template-columns: 1fr 1fr 3fr;
+}
+.shard-grid-container.ratio-1-3-1{
+    -ms-grid-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+.shard-grid-container.ratio-3-1-1{
+    -ms-grid-columns: 3fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
+}
+/*grid of 6*/
+.shard-grid-container.ratio-1-5{
+    -ms-grid-columns: 1fr 5fr;
+    grid-template-columns: 1fr 5fr;
+}
+.shard-grid-container.ratio-5-1{
+    -ms-grid-columns: 5fr 1fr;
+    grid-template-columns: 5fr 1fr;
+}
+.shard-grid-container.ratio-1-1-4{
+    -ms-grid-columns: 1fr 1fr 4fr;
+    grid-template-columns: 1fr 1fr 4fr;
+}
+.shard-grid-container.ratio-1-4-1{
+    -ms-grid-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+.shard-grid-container.ratio-4-1-1{
+    -ms-grid-columns: 4fr 1fr 1fr;
+    grid-template-columns: 4fr 1fr 1fr;
+}
+.shard-grid-container.ratio-1-2-3{
+    -ms-grid-columns: 1fr 2fr 3fr;
+    grid-template-columns: 1fr 2fr 3fr;
+}
+.shard-grid-container.ratio-1-3-2{
+    -ms-grid-columns: 1fr 3fr 2fr;
+    grid-template-columns: 1fr 3fr 2fr;
+}
+.shard-grid-container.ratio-3-2-1{
+    -ms-grid-columns: 3fr 2fr 1fr;
+    grid-template-columns: 3fr 2fr 1fr;
+}
+.shard-grid-container.ratio-2-1-3{
+    -ms-grid-columns: 2fr 1fr 3fr;
+    grid-template-columns: 2fr 1fr 3fr;
+}
+.shard-grid-container.ratio-3-1-2{
+    -ms-grid-columns: 3fr 1fr 2fr;
+    grid-template-columns: 3fr 1fr 2fr;
+}
+.shard-grid-container.ratio-2-3-1{
+    -ms-grid-columns: 2fr 3fr 1fr;
+    grid-template-columns: 2fr 3fr 1fr;
+}
+
+.shard-grid-content{
+    padding: 10px;
+    position: relative;
+    font-family: gs;
+    text-align: left;
+}
+.shard-grid-content.scrollable{
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.shard-grid-content.scrollable-x{
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 500px;
+}
+.shard-grid-content.scrollable-y{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 500px;
+}
+.shard-grid-content.col-span-2, .shard-grid-container.col-span-2{
+    -ms-grid-column: span 2;
+    grid-column-start: span 2;
+}
+.shard-grid-content.col-span-3, .shard-grid-container.col-span-3{
+    -ms-grid-column: span 3;
+    grid-column-start: span 3;
+}
+.shard-grid-content.col-span-4, .shard-grid-container.col-span-4{
+    -ms-grid-column: span 4;
+    grid-column-start: span 4;
+}
+.shard-grid-content.col-span-5, .shard-grid-container.col-span-5{
+    -ms-grid-column: span 5;
+    grid-column-start: span 5;
+}
+
+.shard-caption{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+.shard-caption:after{
+    content: "";
+    z-index: 200;
+    transition: all .125s ease;
+    opacity: 0;
+}
+.shard-caption:hover:after{
+    content: attr(gs-caption);
+    position: absolute;
+    display: block;
+    min-width: 100px;
+    padding: 8px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #fefefe;
+    opacity: 1;
+    bottom: calc(100% + 5px);
+    border-radius: 4px;
+    border: solid 1px var(--color-primary);
+    background-color: var(--color-card);
+}
+.shard-caption.shard-caption-right:hover:after{
+    right: 0;
+}
+
+.shard-table{
+    border: none !important;
+    font-family: gs;
+    margin-top: 10px;
+    min-width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-family: gs;
+}
+.shard-table td::-moz-selection{
+    background-color: #000000;
+    color: #ffffff;
+}
+.shard-table td::selection{
+    background-color: #000000;
+    color: #ffffff;
+}
+.shard-table tr{
+    border: none !important;
+    color: var(--color-text);
+    padding: 10px;
+    background-color: var(--color-table);
+}
+.shard-table tr:nth-child(odd){
+    /*background-color: #717275;*/
+}
+.shard-table tr:nth-child(even){
+    /*background-color: #7e7f82;*/
+}
+.shard-table tr:hover{
+    background-color: var(--color-table-hover);
+}
+.shard-table.dense tr{
+    padding: 5px;
+}
+.shard-table td{
+    border: none !important;
+    padding: 10px;
+}
+.shard-table.dense td{
+    padding: 5px;
+}
+.shard-table td.empty-placeholder{
+    text-align: center;
+    color: #aaaaaa;
+    padding: 20px;
+}
+.shard-table th{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    border: none !important;
+    padding: 10px;
+    font-family: gs;
+    text-align: left;
+    font-size: 1.5rem;
+}
+.shard-table.dense th{
+    padding: 5px;
+}
+
+.shard-button{
+    display: inline-block;
+    text-decoration: none;
+    font-family: gs;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-button-default-text);
+    padding: 10px;
+    background-color: var(--color-button-default);
+}
+.shard-button:hover{
+    text-decoration: none;
+    color: var(--color-text);
+    background-color: var(--color-button-default-hover);
+}
+.shard-button.primary{
+    color: var(--color-button-primary-text);
+    background-color: var(--color-button-primary);
+}
+.shard-button.primary:hover{
+    color: var(--color-text);
+    background-color: var(--color-button-primary-hover);
+}
+.shard-button.good{
+    color: var(--color-button-good-text);
+    background-color: var(--color-button-good);
+}
+.shard-button.good:hover{
+    color: var(--color-text);
+    background-color: var(--color-button-good-hover);
+}
+.shard-button.warning{
+    color: var(--color-button-warning-text);
+    background-color: var(--color-button-warning);
+}
+.shard-button.warning:hover{
+    color: var(--color-text);
+    background-color: var(--color-button-warning-hover);
+}
+.shard-button.bad{
+    color: var(--color-button-bad-text);
+    background-color: var(--color-button-bad);
+}
+.shard-button.bad:hover{
+    color: var(--color-text);
+    background-color: var(--color-button-bad-hover);
+}
+.shard-button:active, .shard-button:visited{
+    text-decoration: none;
+    color: var(--color-button-default-text);
+}
+.shard-button.primary:active, .shard-button.primary:visited{
+    color: var(--color-button-primary-text);
+}
+.shard-button.good:active, .shard-button.good:visited{
+    color: var(--color-button-good-text);
+}
+.shard-button.warning:active, .shard-button.warning:visited{
+    color: var(--color-button-warning-text);
+}
+.shard-button.bad:active, .shard-button.bad:visited{
+    color: var(--color-button-bad-text);
+}
+
+.uppercase{
+    text-transform: uppercase !important;
+}
+
+@media screen and (max-width: 425px){
+    .shard-navbar-limiter{
+        display: flex;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        width: 100%;
+        height: calc(var(--navbar-height) - 20px);
+    }
+    .shard-navbar-trigger{
+        display: block;
+        width: calc(var(--navbar-height) - 20px);
+        height: calc(var(--navbar-height) - 20px);
+    }
+    .shard-burger{
+        display: block;
+        position: relative;
+        width: calc(var(--navbar-height) - 20px);
+        height: calc((var(--navbar-height) - 20px) / 5);
+        background-color: var(--color-navbar-burger);
+        transition: all .375s ease;
+        opacity: 1;
+        transform: rotateZ(0deg);
+        transform-origin: top left;
+    }
+    .shard-burger:before{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: calc((var(--navbar-height) - 20px) / 5 * 2);
+        width: calc(var(--navbar-height) - 20px);
+        height: calc((var(--navbar-height) - 20px) / 5);
+        background-color: var(--color-navbar-burger);
+        transition: all .375s ease;
+        opacity: 1;
+        transform: rotateZ(0deg);
+        transform-origin: center;
+    }
+    .shard-burger:after{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: calc((var(--navbar-height) - 20px) / 5 * 4);
+        width: calc(var(--navbar-height) - 20px);
+        height: calc((var(--navbar-height) - 20px) / 5);
+        background-color: var(--color-navbar-burger);
+        transition: all .375s ease;
+        opacity: 1;
+        transform: rotateZ(0deg);
+        transform-origin: center;
+    }
+    .back .shard-burger{
+        background-color: var(--color-navbar-close);
+        transform: rotateZ(45deg) translate3d(20%, -45%, 0);
+    }
+    .back .shard-burger:before{
+        background-color: var(--color-navbar-close);
+        opacity: 0;
+    }
+    .back .shard-burger:after{
+        background-color: var(--color-navbar-close);
+        transform: rotateZ(-90deg) translateX(80%);
+    }
+    .shard-navbar-header{
+        flex-grow: 1;
+        text-align: right;
+        margin-left: 10px;
+    }
+    .shard-navbar-header img{
+        height: calc(var(--navbar-height) - 20px);
+    }
+    .shard-navbar-button-group{
+        position: fixed;
+        top: var(--navbar-height);
+        left: 0;
+        display: flex;
+        background-color: var(--color-navbar);
+        width: var(--sidebar-width);
+        height: calc(100% - var(--navbar-height));
+        flex-direction: column;
+        list-style: none;
+        align-content: center;
+        transition: all .375s ease;
+        transform: translate3d(-100%,0,0);
+        z-index: 200;
+    }
+    .shard-navbar-button-group.expanded{
+        transform: translate3d(0,0,0);
+    }
+    .shard-navbar-button{
+        display: block;
+        width: 100%;
+        padding: 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        font-family: gs;
+        align-self: center;
+        border-bottom: solid 1px var(--color-navbar-border);
+    }
+    .shard-navbar-button:hover{
+        background-color: var(--color-navbar-button-hover);
+    }
+
+    .shard-table{
+        font-size: 1.4rem;
+    }
+
+    .gs-grid-content.scrollable-x{
+        margin-right: 10px;
+    }
+    .shard-grid-container.column-2{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .shard-grid-container.column-3{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .shard-grid-container.column-4{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .shard-grid-container.column-5{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .shard-grid-container.column-6{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .shard-grid-container.ratio-1-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-2{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-2-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-3{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-3-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-4{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-5{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-2-3{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-3-2{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-4-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-5-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .shard-grid-container.ratio-1-2-2{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-2-1-2{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-2-2-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-1-3{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-3-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-3-1-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-1-2{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-2-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-2-1-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-1-4{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-4-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-4-1-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-2-3{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-1-3-2{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-3-2-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-2-1-3{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-3-1-2{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .shard-grid-container.ratio-2-3-1{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .shard-grid-content.col-span-2{
+        -ms-grid-column: auto;
+        grid-column-start: auto;
+    }
+    .shard-grid-content.col-span-3{
+        -ms-grid-column: auto;
+        grid-column-start: auto;
+    }
+    .shard-grid-content.col-span-4{
+        -ms-grid-column: auto;
+        grid-column-start: auto;
+    }
+    .shard-grid-content.col-span-5{
+        -ms-grid-column: auto;
+        grid-column-start: auto;
+    }
+
+    .shard-grid-container.column-2.enforce{
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .shard-grid-container.column-3.enforce{
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .shard-grid-container.column-4.enforce{
+        -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .shard-grid-container.column-5.enforce{
+        -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .shard-grid-container.column-6.enforce{
+        -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .shard-grid-content.col-span-2.enforce{
+        -ms-grid-column: span 2;
+        grid-column-start: span 2;
+    }
+    .shard-grid-content.col-span-3.enforce{
+        -ms-grid-column: span 3;
+        grid-column-start: span 3;
+    }
+    .shard-grid-content.col-span-4.enforce{
+        -ms-grid-column: span 4;
+        grid-column-start: span 4;
+    }
+    .shard-grid-content.col-span-5.enforce{
+        -ms-grid-column: span 5;
+        grid-column-start: span 5;
+    }
+    /*grid of 2*/
+    .shard-grid-container.ratio-1-1.enforce{
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    /*grid of 3*/
+    .shard-grid-container.ratio-1-2.enforce{
+        -ms-grid-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr;
+    }
+    .shard-grid-container.ratio-2-1.enforce{
+        -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+    }
+    /*grid of 4*/
+    .shard-grid-container.ratio-1-3.enforce{
+        -ms-grid-columns: 1fr 3fr;
+        grid-template-columns: 1fr 3fr;
+    }
+    .shard-grid-container.ratio-3-1.enforce{
+        -ms-grid-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr;
+    }
+    .shard-grid-container.ratio-1-1-2.enforce{
+        -ms-grid-columns: 1fr 1fr 2fr;
+        grid-template-columns: 1fr 1fr 2fr;
+    }
+    .shard-grid-container.ratio-1-2-1.enforce{
+        -ms-grid-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+    .shard-grid-container.ratio-2-1-1.enforce{
+        -ms-grid-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+    /*grid of 5*/
+    .shard-grid-container.ratio-1-4.enforce{
+        -ms-grid-columns: 1fr 4fr;
+        grid-template-columns: 1fr 4fr;
+    }
+    .shard-grid-container.ratio-2-3.enforce{
+        -ms-grid-columns: 2fr 3fr;
+        grid-template-columns: 2fr 3fr;
+    }
+    .shard-grid-container.ratio-3-2.enforce{
+        -ms-grid-columns: 3fr 2fr;
+        grid-template-columns: 3fr 2fr;
+    }
+    .shard-grid-container.ratio-4-1.enforce{
+        -ms-grid-columns: 4fr 1fr;
+        grid-template-columns: 4fr 1fr;
+    }
+    .shard-grid-container.ratio-1-2-2.enforce{
+        -ms-grid-columns: 1fr 2fr 2fr;
+        grid-template-columns: 1fr 2fr 2fr;
+    }
+    .shard-grid-container.ratio-2-1-2.enforce{
+        -ms-grid-columns: 2fr 1fr 2fr;
+        grid-template-columns: 2fr 1fr 2fr;
+    }
+    .shard-grid-container.ratio-2-2-1.enforce{
+        -ms-grid-columns: 2fr 2fr 1fr;
+        grid-template-columns: 2fr 2fr 1fr;
+    }
+    .shard-grid-container.ratio-1-1-3.enforce{
+        -ms-grid-columns: 1fr 1fr 3fr;
+        grid-template-columns: 1fr 1fr 3fr;
+    }
+    .shard-grid-container.ratio-1-3-1.enforce{
+        -ms-grid-columns: 1fr 3fr 1fr;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    .shard-grid-container.ratio-3-1-1.enforce{
+        -ms-grid-columns: 3fr 1fr 1fr;
+        grid-template-columns: 3fr 1fr 1fr;
+    }
+    /*grid of 6*/
+    .shard-grid-container.ratio-1-4.enforce{
+        -ms-grid-columns: 1fr 5fr;
+        grid-template-columns: 1fr 5fr;
+    }
+    .shard-grid-container.ratio-4-1.enforce{
+        -ms-grid-columns: 5fr 1fr;
+        grid-template-columns: 5fr 1fr;
+    }
+    .shard-grid-container.ratio-1-1-4.enforce{
+        -ms-grid-columns: 1fr 1fr 4fr;
+        grid-template-columns: 1fr 1fr 4fr;
+    }
+    .shard-grid-container.ratio-1-4-1.enforce{
+        -ms-grid-columns: 1fr 4fr 1fr;
+        grid-template-columns: 1fr 4fr 1fr;
+    }
+    .shard-grid-container.ratio-4-1-1.enforce{
+        -ms-grid-columns: 4fr 1fr 1fr;
+        grid-template-columns: 4fr 1fr 1fr;
+    }
+    .shard-grid-container.ratio-1-2-3.enforce{
+        -ms-grid-columns: 1fr 2fr 3fr;
+        grid-template-columns: 1fr 2fr 3fr;
+    }
+    .shard-grid-container.ratio-1-3-2.enforce{
+        -ms-grid-columns: 1fr 3fr 2fr;
+        grid-template-columns: 1fr 3fr 2fr;
+    }
+    .shard-grid-container.ratio-3-2-1.enforce{
+        -ms-grid-columns: 3fr 2fr 1fr;
+        grid-template-columns: 3fr 2fr 1fr;
+    }
+    .shard-grid-container.ratio-2-1-3.enforce{
+        -ms-grid-columns: 2fr 1fr 3fr;
+        grid-template-columns: 2fr 1fr 3fr;
+    }
+    .shard-grid-container.ratio-3-1-2.enforce{
+        -ms-grid-columns: 3fr 1fr 2fr;
+        grid-template-columns: 3fr 1fr 2fr;
+    }
+    .shard-grid-container.ratio-2-3-1.enforce{
+        -ms-grid-columns: 2fr 3fr 1fr;
+        grid-template-columns: 2fr 3fr 1fr;
+    }
+    /* width */
+    ::-webkit-scrollbar:horizontal{
+        height: 5px;
+    }
+}

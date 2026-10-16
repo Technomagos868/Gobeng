@@ -1,0 +1,159 @@
+:root {
+  --color-orange: #FFA500;
+}
+
+.tmg-start-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.tmg-section-wrapper.start {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px; 
+  padding: 0 20px;
+}
+
+.tmg-start-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.tmg-start-item {
+  text-align: center;
+  padding: 10px;
+}
+
+.tmg-start-item p {
+  margin: 10px 20px 30px 20px;
+}
+
+.tmg-start-item h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-orange);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.tmg-section-wrapper.get {
+  background-image: url(../image/calender.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  position: relative;
+}
+
+.tmg-section-wrapper.get::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.tmg-page-container h2 {
+  font-size: 1.4rem;
+}
+
+.tmg-get-button {
+  text-align: right;
+  margin-top: 150px;
+  z-index: 1;
+  position: relative;
+}
+
+.tmg-get-button .gc-button {
+  display: inline-block;
+  background-color: #ff9800;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.tmg-section-wrapper.banner {
+  height: 100%;
+  background-image: url(../image/Home_Gobeng.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+.tmg-section-wrapper.banner .tmg-page-container {
+  position: relative;
+  color: white;
+}
+
+.tmg-section-wrapper.banner p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  line-height: 1.5;
+  padding: 0 20px;
+  max-width: 600px;
+  display: flex;
+  text-align: left;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero-card {
+    position: absolute;
+    bottom: -45px;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: right;
+    gap: 30px;
+    transform: translateX(-30px);
+}
+
+.card{
+    width:300px;
+    height:90px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#F7F0E4;
+    color:black;
+    text-decoration:none;
+
+    font-family:"Inter", sans-serif;
+    font-size:28px;
+    font-weight:500;
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover{
+    background:#e8ddc5;
+    transform:translateY(-5px);
+}

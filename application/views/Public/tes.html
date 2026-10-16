@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>List Murid Berdasarkan Tombol</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .list {
+      display: none; /* sembunyikan dulu */
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #f0f0f0;
+      margin: 5px;
+      padding: 8px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Pilih Tombol untuk Menampilkan List Murid</h2>
+
+  <button onclick="tampilkan('listA')">Tombol A</button>
+  <button onclick="tampilkan('listB')">Tombol B</button>
+
+  <!-- List Murid A -->
+  <div id="listA" class="list">
+    <h3>List Murid A</h3>
+    <ul>
+      <li>Andi</li>
+      <li>Agus</li>
+      <li>Amira</li>
+    </ul>
+  </div>
+
+  <!-- List Murid B -->
+  <div id="listB" class="list">
+    <h3>List Murid B</h3>
+    <ul>
+      <li>Budi</li>
+      <li>Bella</li>
+      <li>Bagas</li>
+    </ul>
+  </div>
+
+  <script>
+    function tampilkan(id) {
+      // sembunyikan semua list
+      let semuaList = document.querySelectorAll(".list");
+      semuaList.forEach(list => list.style.display = "none");
+
+      // tampilkan hanya list yang dipilih
+      document.getElementById(id).style.display = "block";
+    }
+  </script>
+</body>
+</html>

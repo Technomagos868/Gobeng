@@ -1,0 +1,127 @@
+.gs-icon.dashboard{
+    background-image: url('../icon/ic_dashboard_white_48px.svg');
+}
+.gs-icon.add{
+    background-image: url('../icon/ic_add_box_white_48px.svg');
+}
+.gs-icon.add-thin {
+    background-image: url("../../gemstone_core/icon/ic_add_white_48px.svg");
+}
+.gs-icon.opname{
+    background-image: url('../icon/ic_assignment_turned_in_white_48px.svg');
+}
+.gs-icon.check{
+    background-image: url('../icon/ic_check_white_48px.svg');
+}
+.gs-icon.contact{
+    background-image: url('../icon/ic_contact_phone_white_48px.svg');
+}
+.gs-icon.close{
+    background-image: url('../icon/ic_close_white_48px.svg');
+}
+.gs-icon.history{
+    background-image: url(../icon/ic_assignment_white_48px.svg);
+}
+.gs-icon.delete{
+    background-image: url(../icon/ic_delete_white_48px.svg);
+}
+.gs-icon.edit{
+    background-image: url(../icon/ic_edit_white_48px.svg);
+}
+.gs-icon.back{
+    background-image: url('../icon/ic_arrow_back_white_48px.svg');
+}
+.gs-icon.filter{
+    background-image: url('../icon/ic_filter_list_white_48px.svg');
+}
+.gs-icon.search{
+    background-image: url('../icon/ic_search_white_48px.svg');
+}
+.gs-icon.cart{
+    background-image: url('../icon/ic_shopping_cart_white_48px.svg');
+}
+.gs-icon.retail{
+    background-image: url('../icon/ic_store_mall_directory_white_48px.svg');
+}
+.gs-icon.management{
+    background-image: url('../icon/ic_business_center_white_48px.svg');
+}
+.gs-icon.production{
+    background-image: url('../icon/ic_build_white_48px.svg');
+}
+.gs-icon.database{
+    background-image: url('../icon/ic_view_headline_white_48px.svg'); 
+}
+.gs-icon.cash{
+    background-image: url('../icon/ic_attach_money_white_48px.svg'); 
+}
+.gs-icon.admin{
+    background-image: url('../icon/ic_account_box_white_48px.svg');
+}
+.gs-icon.customer{
+    background-image: url('../icon/ic_group_white_48px.svg'); 
+}
+.gs-icon.verified{
+    background-image: url('../icon/ic_verified_user_white_48px.svg');
+}
+.gs-icon.offer{
+    background-image: url('../icon/ic_local_offer_white_48px.svg');
+}
+.gs-icon.vehicle{
+    background-image: url('../icon/ic_directions_car_white_48px.svg');
+}
+.gs-icon.serial{
+    background-image: url('../icon/ic_confirmation_number_white_48px.svg');
+}
+.gs-icon.storage{
+    background-image: url('../icon/ic_storage_white_48px.svg');
+}
+.gs-icon.company-crest{
+    background-image: url('../icon/company-icon.png');
+}
+.gs-icon.gs-crest{
+    background-image: url('../icon/gs-logo-icon.png');
+}
+.gs-icon.reload{
+    background-image: url('../icon/ic_cached_white_48px.svg');
+}
+.gs-icon.print{
+    background-image: url('../icon/ic_print_white_48px.svg');
+
+}
+.gs-icon.truck{
+    background-image: url('../icon/ic_local_shipping_white_48px.svg');
+}
+.gs-icon.material{
+    background-image: url('../icon/gs-material.svg');
+}
+.gs-icon.product{
+    background-image: url('../icon/gs-product.svg');
+}
+.gs-icon.mold{
+    background-image: url('../icon/gs-mold.svg');
+}
+.gs-icon.machine{
+    background-image: url('../icon/gs-machine.svg');
+}
+.gs-icon.tool{
+    background-image: url('../icon/ic_build_white_48px.svg');
+}
+.gs-icon.warehouse{
+    background-image: url('../icon/gs-warehouse.svg');
+}
+.gs-icon.sequence{
+    background-image: url('../icon/gs-sequence.svg');
+}
+.gs-icon.standard{
+    background-image: url('../icon/gs-standard.svg');
+}
+.gs-icon.packaging{
+    background-image: url('../icon/gs-packaging.svg');
+}
+.gs-icon.download{
+    background-image: url('../icon/ic_file_download_white_48px.svg');
+}
+.gs-icon.link{
+    background-image: url('../icon/ic_link_white_48px.svg');
+}

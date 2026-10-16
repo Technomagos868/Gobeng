@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h2 {
+        margin-left: 30px;
+      }
+      header {
+        background-color: #f8c14b;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        z-index: 1000;
+      }
+
+      .login {
+        float: right;
+        display: block;
+        margin-right: 50px;
+      }
+      .icon img {
+        height: 24px;
+        width: 24px;
+      }
+      .dropdown {
+        position: relative;
+        display: flex;
+        margin-left: 50px;
+      }
+
+      .dropbtn {
+        align-items: center;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 6px;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: grid;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .show {
+        display: block;
+      }
+      footer {
+        background-color: #f8c14b;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+      }
+      @media screen and (max-width: 600px) {
+        .col-25,
+        .col-75,
+        input[type="submit"] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+      .left-menu {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .calendar {
+      max-width: 400px;
+      margin: auto;
+      margin-top: 150px;
+    }
+
+    .calendar header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .calendar table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .calendar th,
+    .calendar td {
+      width: 14.28%;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .calendar td.today {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .deadline-tugas{
+      background-color: #f8c14b;
+      padding: 20px;
+    }
+    .assignment{
+      display: flex;
+      text-align: left;
+      justify-content: center;
+      
+    }
+    .jadwal-ulangan{
+    justify-content: center;
+    margin-left: 100px;
+    background-color: #ddd;
+    }
+    </style>
+    <script>
+      // Fungsi toggle dropdown
+      function toggleDropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      const monthNames = [
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember",
+      ];
+
+      let today = new Date();
+      let currentMonth = today.getMonth();
+      let currentYear = today.getFullYear();
+
+      function generateCalendar(month, year) {
+        const calendarBody = document.getElementById("calendarBody");
+        calendarBody.innerHTML = "";
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        document.getElementById(
+          "monthYear"
+        ).innerText = `${monthNames[month]} ${year}`;
+
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+          let row = document.createElement("tr");
+
+          for (let j = 0; j < 7; j++) {
+            let cell = document.createElement("td");
+
+            if (i === 0 && j < firstDay) {
+              cell.innerHTML = "";
+            } else if (date > daysInMonth) {
+              break;
+            } else {
+              cell.innerHTML = date;
+
+              if (
+                date === today.getDate() &&
+                year === today.getFullYear() &&
+                month === today.getMonth()
+              ) {
+                cell.classList.add("today");
+              }
+
+              date++;
+            }
+
+            row.appendChild(cell);
+          }
+
+          calendarBody.appendChild(row);
+        }
+      }
+
+      function changeMonth(delta) {
+        currentMonth += delta;
+        if (currentMonth > 11) {
+          currentMonth = 0;
+          currentYear++;
+        } else if (currentMonth < 0) {
+          currentMonth = 11;
+          currentYear--;
+        }
+        generateCalendar(currentMonth, currentYear);
+      }
+
+      // Load awal
+      generateCalendar(currentMonth, currentYear);
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="left-menu">
+        <div class="dropdown">
+          <button class="dropbtn">
+            <div class="icon">
+              <img src="d3e24f37-7ea2-4707-9386-d1e6f4482bea.png" alt="menu" />
+            </div>
+          </button>
+          <div class="dropdown-content">
+            <a href="#"> Add Tugas</a>
+            <a href="#"> List Murid</a>
+            <a href="#"> List Kelas</a>
+          </div>
+        </div>
+        <div class="Home">
+          <a href=""><h2>Home</h2></a>
+        </div>
+        <div class="about">
+          <a href=""> <h2>About</h2></a>
+        </div>
+      </div>
+      <div class="login">
+        <a href="Sign-in.php"> <h2>Login</h2></a>
+      </div>
+    </header>
+
+      <div class="calendar">
+        <div class="kalender">
+          <button onclick="changeMonth(-1)">&#8592;</button>
+          <h2 id="monthYear"></h2>
+          <button onclick="changeMonth(1)">&#8594;</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Min</th>
+              <th>Sen</th>
+              <th>Sel</th>
+              <th>Rab</th>
+              <th>Kam</th>
+              <th>Jum</th>
+              <th>Sab</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody">
+            <!-- Isi kalender akan di-generate oleh JavaScript -->
+          </tbody>
+        </table>
+      </div></p>
+    </div>
+
+    <div class="assignment">
+    <div class="deadline-tugas">
+        <H2>Deadline Tugas</H2>
+    </div>
+    <div class="jadwal-ulangan">
+        <h2>jadwal ulangan</h2>
+    </div>
+    </div>
+    <footer>
+      <h4>Email : Tobyevans@gmail.com</h4>
+      <h4>Email : joel.abner0005@gmail.com</h4>
+      <h4>Email : patrick.edgar@gmail.com</h4>
+    </footer>
+  </body>
+</html>

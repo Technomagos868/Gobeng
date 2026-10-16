@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.17",
+        "vlucas/phpdotenv": "^5.5",
+        "chriskacerguis/codeigniter-restserver": "^3.1"
+    }
+}

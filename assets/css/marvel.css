@@ -1,0 +1,109 @@
+:root {
+  --size-max-width: 1200px;
+  --size-navbar-height: 60px;
+  --color-red: #f86b4b;
+  --color-orange: #f8c14b;
+  --color-white: #f4f4f4;
+  --color-black: #262626;
+  --color-gray: #dadada;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', "Geneva", Verdana, sans-serif;
+  font-size: 12px;
+  background-color: var(--color-white);
+}
+
+.tmg-section-wrapper {
+  min-height: 400px;
+}
+
+.tmg-section-wrapper.navbar {
+  background-color: var(--color-orange);
+  min-height: var(--size-navbar-height);
+}
+
+.tmg-section-wrapper.banner {
+  background-image: url(../image/fotoanakbljr.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tmg-navbar-button-group {
+  padding: 15px 0;
+}
+
+.tmg-navbar-button-group a {
+  padding: 20px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--color-black);
+  font-weight: bold;
+}
+
+.tmg-navbar-button-group a:hover {
+  color: var(--color-red);
+}
+
+.tmg-page-container {
+  max-width: var(--size-max-width);
+}
+
+.tmg-start-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.tmg-start-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.tmg-start-item {
+  text-align: center;
+  display: grid;
+  gap: 10px;
+}
+
+.tmg-start-item h1 {
+  display: grid;
+  align-items: center;
+  background-color: var(--color-orange);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.tmg-section-wrapper.get{
+  background-image: url(../image/calender.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.tmg-page-container-get-button{
+  text-align: right;
+  justify-content: center;
+  background-color: var(--color-orange) ;
+}
+.tmg-page-container-button{
+  background-color: var(--color-orange);
+  width: 50px;
+  height: 50px;
+}
+
+.tmg-section-wrapper.footer {
+  margin-top: 50px;
+  background-color: var(--color-orange) ;
+  text-align: center;
+  display: grid;
+  font-size: 10px;
+}

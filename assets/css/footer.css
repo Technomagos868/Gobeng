@@ -1,0 +1,75 @@
+.tmg-section-wrapper.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--color-orange);
+  color: var(--color-black);
+  margin-top: 10px;
+}
+
+
+/* MAP */
+.tmg-footer-map iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+}
+
+
+/* SOSMED */
+.tmg-footer-sosmed h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.tmg-footer-sosmed img {
+  height: 60px;
+}
+
+.tmg-footer-sosmed a {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.tmg-footer-sosmed a:hover {
+  color: #222;
+}
+
+
+/* KONTAK */
+.tmg-footer-kontak p,
+.tmg-footer-kontak h3 {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+
+/* =======================
+   RESPONSIVE BREAKPOINTS
+   ======================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .tmg-section-wrapper.footer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* HP */
+@media (max-width: 600px) {
+  .tmg-section-wrapper.footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .tmg-footer-sosmed img {
+    margin: 0 auto;
+  }
+
+  .tmg-footer-map iframe {
+    margin: 0;
+  }
+}
